@@ -19,7 +19,7 @@ Route::get('posts/{id}', ['as' => 'posts.show' , 'uses' => 'PostsController@show
 Route::group(['prefix' => 'admin'], function() {
     Route::get('/', ['as' => 'admin.dashboard.index', 'uses' => 'AdminDashboardController@index']);
     Route::post('posts',['as'=>'admin.posts.store','uses'=>'AdminPostsController@store']);
-
+    Route::patch('posts/{id}',['as'=>'admin.posts.update','uses'=>'AdminPostsController@update']);
     Route::get('posts'          , ['as' => 'admin.posts.index' , 'uses' => 'AdminPostsController@index']);
     Route::get('posts/create'   , ['as' => 'admin.posts.create', 'uses' => 'AdminPostsController@create']);
     Route::get('posts/{id}/edit', ['as' => 'admin.posts.edit'  , 'uses' => 'AdminPostsController@edit']);
